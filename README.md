@@ -166,6 +166,10 @@ WebOS是一个支持多种存储。
 `密码:123456`
 * 提示：`请不要上传无意义内容，测试号为公开账号，请注意隐私。不要上传违法内容，发现封禁IP`
 
+## 自部署一键安装
+* 1.`wget https://plugins.webos.tenfell.cn/webos_update/common/install.sh && sh install.sh`
+* 2.浏览器访问`http://网址:8088`
+
 ## 自部署快捷步骤
 * 1.`yum install java-1.8.0-openjdk`已有JDK可跳过
 * 2.`wget http://plugins.webos.tenfell.cn/webos_update/php/index.php?type=8 -O webos.zip`
