@@ -166,6 +166,22 @@ WebOS是一个支持多种存储。
 `密码:123456`
 * 提示：`请不要上传无意义内容，测试号为公开账号，请注意隐私。不要上传违法内容，发现封禁IP`
 
+## 自动安装步骤
+* 1.`yum install java-1.8.0-openjdk`已有JDK可跳过
+* 2.`wget http://plugins.webos.tenfell.cn/webos_update/php/index.php?type=8 -O webos.zip`
+* 3.`unzip webos.zip`
+* 4.`cd api`
+* 5.`sh restart.sh`
+* 6.浏览器访问`http://网址:8088`
+
+## 手动安装步骤
+* 1.从发行版下载安装包[点我下载](http://plugins.webos.tenfell.cn/webos_update/php/index.php?type=8) 上传到服务器
+* 2.安装好jdk已有jdk可跳过此步骤
+* 3.解压webos.zip文件
+* 4.进入api目录,启动项目,linux执行`sh restart.sh`,win双击`start.bat`文件
+* 5.浏览器访问`http://网址:8088`
+
+
 ## 部分项目演示
 登录页  
 <img src="images/denglu.png"/>
