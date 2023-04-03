@@ -2,7 +2,7 @@
 <img src="images/logo.png" alt="logo" width="20%"/>
 
 <br />
-WebOS v1.1.9
+WebOS v1.2.4
 </h1>
 <p align="center">
     <strong>更现代感的，私有云、云盘、网盘、NAS</strong>
