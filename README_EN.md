@@ -1,217 +1,166 @@
-<h1 align="center" style="text-align:center;">
-<img src="images/logo.png" alt="logo" width="20%"/>
+# 仿Windows 11 网页版 私有云
+# 腾飞Webos
 
-<br />
-WebOS
-</h1>
-<p align="center">
-    <strong>更现代感的，私有云、云盘、网盘、NAS</strong>
-</p>
-<p align="center">
-    <a href="https://support.qq.com/product/464670/">官网</a>
-
-</p>
-
-### 部署环境
-
-[![](https://img.shields.io/badge/MySQL-5.0%2B-brightgreen)](https://www.mysql.com/downloads/)
-<a target="_blank" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
-<img src="https://img.shields.io/badge/JDK-8-green.svg" alt="jdk-8" />
-![linux](https://img.shields.io/badge/linux-suported-success.svg?logo=linux&logoColor=white)
-![windows](https://img.shields.io/badge/windows-suported-success.svg?logo=windows)
-### 浏览器支持
-![chrome](https://img.shields.io/badge/chrome->%3D4.5-success.svg?logo=google%20chrome&logoColor=red)
-![firefox](https://img.shields.io/badge/firefox->38-success.svg?logo=mozilla%20firefox&logoColor=red)
-![edge](https://img.shields.io/badge/edge->%3D12-success.svg?logo=microsoft%20edge&logoColor=blue)
-![ie](https://img.shields.io/badge/ie->%3D11-success.svg?logo=internet%20explorer&logoColor=blue)
-![Safari](https://img.shields.io/badge/safari->%3D9-success.svg?logo=safari&logoColor=blue)
-![Andriod](https://img.shields.io/badge/andriod->%3D4.4-success.svg?logo=android)
-![oper](https://img.shields.io/badge/opera->%3D3.0-success.svg?logo=opera&logoColor=red)
-
-
-### 移动端支持
-![ios](https://img.shields.io/badge/ios-supported-success.svg?logo=apple&logoColor=white)
-![Andriod](https://img.shields.io/badge/andriod-suported-success.svg?logo=android)
-![windows](https://img.shields.io/badge/windows-suported-success.svg?logo=windows&logoColor=blue)
-
-
-### PC桌面支持
-![macOS](https://img.shields.io/badge/macOS-supported-success.svg?logo=apple&logoColor=white)
-![linux](https://img.shields.io/badge/linux-suported-success.svg?logo=linux&logoColor=white)
-![windows](https://img.shields.io/badge/windows-suported-success.svg?logo=windows)
-
-
-
-<br/>
-<p align="center">
-    <a href="https://jq.qq.com/?_wv=1027&k=8TiOCSOZ">
-	<img src="https://img.shields.io/badge/QQ交流群-130906439-orange"/></a>
-</p>
-
-
-<hr />
-
-Webos是免费的，个人随意部署</p>全平台兼容性：Win、Linux、Mac (Apache、Nginx、IIS)。从百元级别的智能路由器和盒子产品，到NAS网络存储设备，到服务器面板，服务器，硬件集成，ERP集成，私有云、公有云、SaaS服务搭建等各种场景都可自如适用。
-
+> 腾飞WebOS是一个支持多种存储。
+> 云端存储&协同办公新体验 如Windows11体验的私有云盘/企业网盘。
+> 🎉🎉全平台兼容性：Win、Linux、Mac、Docker (Apache、Nginx、IIS)。从百元级别的智能路由器和盒子产品
+> 到NAS网络存储设备，到服务器面板，服务器，硬件集成，ERP集成，私有云、公有云、SaaS服务搭建等各种场景都可自如适用
 支持跨平台浏览器的无缝访问。仅需一个浏览器即在web端完成文档的上传下载、管理查看，不需要安装任何类似ftp客户端的软件。
+> 只需要一个浏览器，三端都能访问 ✨PC✨H5✨ipad🎊🎈`o(^o^)o`
 
 
-<hr />
+- [腾飞Webos 网页版](https://os.tenfell.cn/)
+  - [前言](#前言)
+  - [效果展示](#效果展示)
+  - [在线体验](#在线体验)
+  - [安装和使用](#安装和使用)
+  - [网盘挂载](#网盘挂载)
+  - [部分功能](#部分功能)
+  - [问答](#问答)
 
+## 前言
+腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, [更新日志](https://os.tenfell.cn/update) ←。
 
-## 介绍
+参考API[插件开发](https://thoughts.teambition.com/share/64531c70be7a0f004263891d)
 
-WebOS是一个支持多种存储。
+仿win11的操作习惯，占用内存小，各种高级的功能(支持开发者自行开发插件)
+> 安卓、IOS，桌面版火速开发中....... `>v-)o`
 
-云端存储&协同办公新体验 如Windows11体验的私有云盘/企业网盘。
 
-完全支持私有化部署，存储安全可控 数百种文件格式在线预览、编辑和播放 轻松分享。
 
-高效协作，细粒度权限管控全平台客户端覆盖，随时随地访问。
+## 效果展示
+> 每次更新都会对效果作出调整，达到满意为止(你点一下 [这里](https://webos.tenfell.cn/index.html?toLoginNo=10001&toLoginUser=test&toLoginPassword=123456) 查看官方演示`-_-)o` )
 
+[![](imgs/dl.png)]()
+*登录*
 
+[![](imgs/zm.png)]()
+*桌面*
 
-    🛠 动态视频桌面
+[![](imgs/cd.png)]()
+*开始*
 
-           💡 本地视频
+[![](imgs/sz.png)]()
+*设置*
 
-           💡 网盘视频
+[![](imgs/gj.png)]()
+*小工具*
 
-           💡 第三方视频
+[![](imgs/cc.png)]()
+*文件管理器*
 
- 
+[![](imgs/cs.png)]()
+*上传*
 
-    🛠 多个储存方式
+[![](imgs/xj.png)]()
+*新建*
 
-           💡 本地硬盘(已上线,双模式:秒传模式/常规模式)           
+[![](imgs/gx.png)]()
+*共享*
 
-           💡 阿里云盘(已上线,扫码/验证码/账号登录,直连上传,直连下载)
+[![](imgs/wdbj.png)]()
+*文档编辑*
 
-           💡 天翼云盘(已上线,扫码登录,直连上传,直连下载)
+[![](imgs/tpbj.png)]()
+*图片编辑*
 
-           💡 百度云盘(已上线,扫码/验证码/账号登录,无缓存中转上传,直连下载)
+[![](imgs/yy.png)]()
+*在线音视频*
 
-           💡 夸克网盘(已上线,扫码登录,直连上传,直连下载)
+[![](imgs/yl.png)]()
+*休闲娱乐*
 
-           💡 OneDrive(已上线,扫码,验证码,账号登录,无缓存中转上传,直连下载)
+[![](imgs/cj.png)]()
+*应用商店*
 
-           💡 123网盘(已上线,账号登录,直连上传,直连下载)
+[![](imgs/wp.png)]()
+*网盘模式*
+## 在线体验
 
-           💡 可道云(已上线,账号登录,无缓存中转上传,直连下载)
+[在线预览](https://webos.tenfell.cn/index.html?toLoginNo=10001&toLoginUser=test&toLoginPassword=123456)
 
-           💡 AList(已上线,账号登录,免密登录,中转上传,直连下载)
 
-           💡 小龙云盘(已上线,密钥登录,直连上传)
 
-           💡 七牛云(已上线,密钥登录,直连上传,直连下载)
+## 安装和使用
+> 【推荐】万能自动部署一键安装
 
-           💡 一刻相册(已上线,账号登录,中转上传,直连下载)
+`if [ -f /usr/bin/curl ];then curl -sSO https://support.tenfell.cn/webos_update/common/install.sh;else wget -O install.sh https://support.tenfell.cn/webos_update/common/install.sh;fi;bash install.sh`
 
-           ⚠️ 后续增加
+win版安装教程
 
- 
+[点击查看](https://os.tenfell.cn/711.html)
 
-    🛠 支持库
+linux版部署教程
 
-           ❤️ 最新支持终端SSH
+[点击查看](https://os.tenfell.cn/685.html)
 
-           ❤️ 文件预览（PDF、降价、代码、纯文本等）
+MAC版部署教程
 
-           ❤️ 图库相册模式下的图像预览
+[点击查看](https://os.tenfell.cn/1049.html)
 
-           ❤️ 视频和音频预览，支持歌词和字幕
+宝塔版部署教程
 
-           ❤️ Office 文档预览/编辑/协同办公 （docx， pptx， xlsx ， ...）
+[点击查看](https://os.tenfell.cn/696.html)
 
-           ❤️ 文件永久链接复制和直接文件下载
+Docker版部署教程
 
-           ❤️ 自适应暗模式
+[点击查看](https://os.tenfell.cn/1042.html)
 
-           ❤️ 文件/文件夹包下载
-
-           ❤️ 网页上传/下载（删除、mkdir、重命名、移动/复制/剪切/粘贴）
-
-           ❤️ 离线下载（即将支持）
-
-           ❤️ 在两个存储之间复制文件
-
-           ❤️ 全盘断点续传(意外断网,刷新,重新在同一个目录选同一个文件能接着传)
-
-           ❤️ 跨盘秒传(任意盘之间复制粘贴会检测是否支持,不支持采用先下载再上传)
-
-           ❤️ 本地磁盘支持秒传和普通模式(管理员有此能力)
-
-           ❤️ 文件编辑预览(文本,代码,文档,图片等在线编辑和预览,后面会支持更多)
-
-           ❤️ 协同办公(采用金山文档绑定文件支持协同办公)
-
-           ❤️ 拖拽上传(从本地文件拖拽文件或者文件夹到webos中即可上传)
-
-           ❤️ 锁屏能力(离开桌面主动锁屏,防止信息泄露,不影响上传和下载)
-
-           ❤️ 直连上传(全盘支持从浏览器直接上传到服务器,不经过中转)
-
-           ❤️ 直连下载(全盘支持从服务器直接下载文件到本地,不经过中转)
-
-           ❤️ 独立的应用商店（可下载应用插件、后期可注册开发者发布自己制作的插件）
-
-           ❤️ 特定的用户组（管理员-主用户-子用户）
-
-
-
-
-
-
-
-
-
-## 官网及相关示例：
-
-* 官网地址：[https://support.qq.com/product/464670](https://support.qq.com/product/464670)
-* 官网配套演示：[https://webos.tenfell.cn](https://webos.tenfell.cn)
-* 项目单测：`主用户编号:10001`
-  `账号:test`
-  `密码:123456`
-* 提示：`请不要上传无意义内容，测试号为公开账号，请注意隐私。不要上传违法内容，发现封禁IP`
-
-## 自部署一键安装
-* 1.`if [ -f /usr/bin/curl ];then curl -sSO https://plugins.webos.tenfell.cn/webos_update/common/install.sh;else wget -O install.sh https://plugins.webos.tenfell.cn/webos_update/common/install.sh;fi;bash install.sh`
-* 2.等待出现欢迎提示语,然后浏览器访问`http://网址:8088`
-
-## 自部署快捷步骤
-* 1.`yum install java-1.8.0-openjdk`已有JDK可跳过
-* 2.`wget http://plugins.webos.tenfell.cn/webos_update/php/index.php?type=8 -O webos.zip`
-* 3.`unzip webos.zip`
-* 4.`cd api`
-* 5.`sh restart.sh`
-* 6.浏览器访问`http://网址:8088`
-
-## 自部署可视化操作步骤
-* 1.从发行版下载安装包[点我下载](http://plugins.webos.tenfell.cn/webos_update/php/index.php?type=8) 上传到服务器
-* 2.安装好jdk已有jdk可跳过此步骤
-* 3.解压webos.zip文件
-* 4.进入api目录,启动项目,linux执行`sh restart.sh`,win双击`start.bat`文件
-* 5.浏览器访问`http://网址:8088`
-
-
-## 部分项目演示
-登录页  
-<img src="images/denglu.png"/>
-文件列表  
-<img src="images/zm.png"/>
-右键菜单  
-<img src="images/caidan.png"/>
-个性化  
-<img src="images/gexinghua.png"/>
-轻应用  
-<img src="images/qingyingyong.png"/>
-应用商店  
-<img src="images/yingyong.png"/>
-上传进度  
-<img src="images/sc.png"/>
-视频播放  
-<img src="images/sp.png"/>
-系统设置  
-<img src="images/xitong.png"/>
-音乐  
-<img src="images/ms.png"/>
+群辉版部署教程
+
+[点击查看](https://os.tenfell.cn/667.html)
+
+
+## 网盘挂载
+已支持挂载的部分网盘:
+- [√] 阿里云盘
+- [√] 天翼云盘
+- [√] 百度云盘
+- [√] 夸克网盘
+- [√] 一刻相册
+- [√] 115网盘
+- [√] OneDrive
+- [√] 123云盘
+- [√] WebDav
+- [√] 本地磁盘
+- [x] 迅雷网盘
+- [x] 移动云盘
+- [x] 曲奇网盘
+
+## 部分功能
+下面是一些常用功能 `~o~)/`
+- [√] 第三方登录
+- [√] 离线下载
+- [√] 网页上传/下载（删除、mkdir、重命名、移动/复制/剪切/粘贴）
+- [√] 全盘断点续传(意外断网,刷新,重新在同一个目录选同一个文件能接着传)
+- [√] 跨盘秒传(任意盘之间复制粘贴会检测是否支持,不支持采用先下载再上传)
+- [√] 文件编辑预览(文本,代码,文档,图片等在线编辑和预览,后面会支持更多)
+- [√] 协同办公(采用金山文档绑定文件支持协同办公)
+- [√] 直连上传(全盘支持从浏览器直接上传到服务器,不经过中转)
+- [√] 直连下载(全盘支持从服务器直接下载文件到本地,不经过中转)
+- [√] 独立的应用商店（可下载应用插件、后期可注册开发者发布自己制作的插件）
+- [√] 文件永久链接复制和直接文件下载
+- [√] 全盘文件分享（可控制是否允许下载）
+- [√] 用户权限管控
+> 更多功能就不意义介绍了，请到官网体验
+
+## 问答
+AD:腾飞webos是干什么的\
+AN:腾飞ebos是一款免费的个人私有云
+
+AD:支持什么环境安装部署\
+AN:基本支持全平台部署`-_-)o`
+
+AD:我能用webos做什么\
+AN:在任何场景下，只需要一个浏览器就能在线办公
+
+AD:腾飞webos后期会收费吗\
+AN:腾飞webos对个人用户是免费的，即使是中小企业，
+我们提供的方案也够您使用，不会强制转换收费模式。
+
+P:应用商店插件以后会不会收费\
+AN:官方提供的插件永不收费，第三方作者自行开发的
+插件，我们不保证存在赞助或关注要求。
+
+
+最近准备重绘图标,大家觉得这个logo怎么样`>_-)o`
