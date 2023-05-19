@@ -2,21 +2,21 @@
 <img src="images/logo.png" alt="logo" width="20%"/>
 
 <br />
-WebOS v1.2.4
+WebOS
 </h1>
 <p align="center">
     <strong>更现代感的，私有云、云盘、网盘、NAS</strong>
 </p>
 <p align="center">
     <a href="https://support.qq.com/product/464670/">官网</a>
-    
+
 </p>
 
 ### 部署环境
 
 [![](https://img.shields.io/badge/MySQL-5.0%2B-brightgreen)](https://www.mysql.com/downloads/)
-    <a target="_blank" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
-        <img src="https://img.shields.io/badge/JDK-8-green.svg" alt="jdk-8" />
+<a target="_blank" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
+<img src="https://img.shields.io/badge/JDK-8-green.svg" alt="jdk-8" />
 ![linux](https://img.shields.io/badge/linux-suported-success.svg?logo=linux&logoColor=white)
 ![windows](https://img.shields.io/badge/windows-suported-success.svg?logo=windows)
 ### 浏览器支持
@@ -99,6 +99,14 @@ WebOS是一个支持多种存储。
 
            💡 可道云(已上线,账号登录,无缓存中转上传,直连下载)
 
+           💡 AList(已上线,账号登录,免密登录,中转上传,直连下载)
+
+           💡 小龙云盘(已上线,密钥登录,直连上传)
+
+           💡 七牛云(已上线,密钥登录,直连上传,直连下载)
+
+           💡 一刻相册(已上线,账号登录,中转上传,直连下载)
+
            ⚠️ 后续增加
 
  
@@ -162,8 +170,8 @@ WebOS是一个支持多种存储。
 * 官网地址：[https://support.qq.com/product/464670](https://support.qq.com/product/464670)
 * 官网配套演示：[https://webos.tenfell.cn](https://webos.tenfell.cn)
 * 项目单测：`主用户编号:10001`
-`账号:test`
-`密码:123456`
+  `账号:test`
+  `密码:123456`
 * 提示：`请不要上传无意义内容，测试号为公开账号，请注意隐私。不要上传违法内容，发现封禁IP`
 
 ## 自部署一键安装
