@@ -19,7 +19,7 @@
   - [问答](#问答)
 
 ## 前言
-腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, [更新日志](https://os.tenfell.cn/update) ←。
+腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, [更新日志](https://bbs.tenfell.cn/update) ←。
 
 参考API[插件开发](https://thoughts.teambition.com/share/64531c70be7a0f004263891d)  
 
@@ -88,27 +88,27 @@
 
  win版安装教程
 
-[点击查看](https://os.tenfell.cn/711.html)
+[点击查看](https://bbs.tenfell.cn/711.html)
 
 linux版部署教程
 
-[点击查看](https://os.tenfell.cn/685.html)
+[点击查看](https://bbs.tenfell.cn/685.html)
 
 MAC版部署教程
 
-[点击查看](https://os.tenfell.cn/1049.html)
+[点击查看](https://bbs.tenfell.cn/1049.html)
 
 宝塔版部署教程
  
-[点击查看](https://os.tenfell.cn/696.html)
+[点击查看](https://bbs.tenfell.cn/696.html)
 
 Docker版部署教程
  
-[点击查看](https://os.tenfell.cn/1042.html)
+[点击查看](https://bbs.tenfell.cn/1042.html)
  
 群辉版部署教程
 
-[点击查看](https://os.tenfell.cn/667.html)
+[点击查看](https://bbs.tenfell.cn/667.html)
 
 
 ## 网盘挂载
