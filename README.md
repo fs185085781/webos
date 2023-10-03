@@ -19,17 +19,16 @@
   - [问答](#问答)
 
 ## 前言
-腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, [更新日志](https://bbs.tenfell.cn/update) ←。
+腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, <a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fbbs.tenfell.cn%2Fupdate" target="_blank">更新日志</a> ←。
 
-参考API[插件开发](https://thoughts.teambition.com/share/64531c70be7a0f004263891d)  
+参考API<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fthoughts.teambition.com%2Fshare%2F64531c70be7a0f004263891d" target="_blank">插件开发</a>  
 
 仿win11的操作习惯，占用内存小，各种高级的功能(支持开发者自行开发插件)
 > 安卓、IOS，桌面版火速开发中....... `>v-)o`
 
 
-
 ## 效果展示
-> 每次更新都会对效果作出调整，达到满意为止(你点一下 [这里](https://webos.tenfell.cn/index.html?toLoginNo=10001&toLoginUser=test&toLoginPassword=123456) 查看官方演示`-_-)o` )
+> 每次更新都会对效果作出调整，达到满意为止(你点一下这里查看<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Ftfyun.gitee.io%2Findex.html%3FtoLoginNo%3D10001%26toLoginUser%3Dtest%26toLoginPassword%3D123456" target="_blank">官方演示</a> `-_-)o` )  
 
 [![](imgs/dl.png)]()
 *登录*
