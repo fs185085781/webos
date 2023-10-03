@@ -9,7 +9,7 @@
 > 只需要一个浏览器，三端都能访问 ✨PC✨H5✨ipad🎊🎈`o(^o^)o`
 
 
-- [腾飞Webos 网页版](https://os.tenfell.cn/)
+- <a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn" target="_blank">腾飞Webos</a>
   - [前言](#前言)
   - [效果展示](#效果展示)
   - [在线体验](#在线体验)
