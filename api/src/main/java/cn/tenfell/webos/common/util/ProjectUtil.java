@@ -155,13 +155,7 @@ public class ProjectUtil {
         String configPath = StrUtil.replace(WebOsApp.class.getResource("").getPath(), "\\", "/");
         rootPath = StrUtil.replace(FileUtil.getParent(configPath, 4), "\\", "/");
         FileUtil.writeUtf8String(Convert.toStr(RuntimeUtil.getPid()), rootPath + "/pidfile.txt");
-        try {
-            if(!ArrayList.class.getDeclaredField("size").trySetAccessible()){
-                authRestart(null);
-            }
-        } catch (NoSuchFieldException e) {
-        } catch (SecurityException e) {
-        }
+        authRestart(null);
         projectConfigPath = rootPath + "/project_config.json";
         hasInstall = FileUtil.exist(projectConfigPath);
         String startConfigPath = rootPath + "/start_config.json";
