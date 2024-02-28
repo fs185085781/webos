@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebSSH</title>
+    <script src="init.js?from=element&plugins=webssh"></script>
+    <script>(function (){
+        if(!parent.webos){
+            document.write("<script src=\"../../../common/sdk/sdk.js\"></"+"script>");
+        }
+    })()
+    </script>
+</head>
+<body>
+<div id="app">
+    <el-row>
+        <el-col :span="19">
+            <el-tabs
+                    v-model="currentTab"
+                    type="card"
+                    closable
+                    @tab-remove="removeTab"
+                    @tab-change ="changeTab"
+            >
+                <template v-for="tab in tabs">
+                    <el-tab-pane
+                            :key="tab.name"
+                            :label="tab.name"
+                            :name="tab.name"
+                    >
+                    </el-tab-pane>
+                    <div ref="term" :data-key="tab.name" style="width:100%;height:calc(100vh - 60px);"></div>
+                </template>
+            </el-tabs>
+        </el-col>
+        <el-col :span="5" style="padding:10px;text-align:center;">
+            <el-row>
+                <el-col :span="24" v-for="(item,index) in list" @click="toOpenSsh(item)" style="margin-bottom:10px;cursor:pointer;">
+                    <div>{{item.name}}<el-icon @click.stop="removeSshLink(index)" style="margin-left:5px;"><delete></delete></el-icon></div>
+
+                </el-col>
+                <el-col :span="24">
+                    <el-button @click="toAddSshLink(0)">增加连接</el-button>
+                </el-col>
+            </el-row>
+        </el-col>
+    </el-row>
+    <el-dialog
+            v-model="edit.show"
+            :title="edit.title"
+            width="500px"
+            draggable
+            :close-on-click-modal="false"
+            :close-on-press-escape="false"
+        >
+        <el-form
+                label-position="left"
+                label-width="100px"
+                :model="edit.data">
+            <el-form-item label="名称">
+                <el-input v-model="edit.data.name" ></el-input>
+            </el-form-item>
+            <el-form-item label="主机IP">
+                <el-input v-model="edit.data.host"></el-input>
+            </el-form-item>
+            <el-form-item label="端口">
+                <el-input v-model="edit.data.port"></el-input>
+            </el-form-item>
+            <el-form-item label="用户名">
+                <el-input v-model="edit.data.username"></el-input>
+            </el-form-item>
+            <el-form-item label="密码">
+                <el-input v-model="edit.data.password"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="saveSshData()">保存</el-button>
+                <el-button @click="edit.show = false">取消</el-button>
+            </el-form-item>
+        </el-form>
+    </el-dialog>
+</div>
+<script src="index-init.js"></script>
+</body>
+</html>

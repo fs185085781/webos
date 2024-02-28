@@ -1,0 +1,12 @@
+{
+  "code": "webssh",
+  "name": "终端",
+  "version": "1.0.0",
+  "author": "阿范",
+  "firstCat": "app",
+  "secondCat": "实用工具",
+  "imgPath": "apps/webssh/icon.png",
+  "descr": "终端",
+  "screenShots": "[]",
+  "effect": "终端"
+}

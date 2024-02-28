@@ -1,0 +1,25 @@
+{
+  "code": "wps",
+  "name": "腾飞Office",
+  "version": "1.0.0",
+  "author": "阿范",
+  "firstCat": "app",
+  "secondCat": "文件增强",
+  "imgPath": "apps/wps/icon.png",
+  "descr": "基于金山文档实现的Office工具",
+  "screenShots": "[]",
+  "effect": "支持文档编辑,支持文档预览",
+  "rightMenuAddAll": [],
+  "rightMenuOpenWith": [
+    {"ext": "doc,dot,wps,wpt,docx,dotx,docm,dotm,rtf,xls,xlt,et,xlsx,xltx,xlsm,xltm,ppt,pptx,pptm,ppsx,ppsm,pps,potx,potm,dpt,dps","icon": "apps/wps/icon.png","expAction": "edit","name": "腾飞Office打开"},
+    {"ext": "doc,dot,wps,wpt,docx,dotx,docm,dotm,rtf,xls,xlt,et,xlsx,xltx,xlsm,xltm,ppt,pptx,pptm,ppsx,ppsm,pps,potx,potm,dpt,dps","icon": "apps/wps/icon.png","expAction": "clear","name": "清除Office缓存"}
+  ],
+  "rightMenuNew": [
+    {"ext": "doc","icon": "imgs/file_icon/doc.png", "expAction": "new","name": "DOC 文档"},
+    {"ext": "docx","icon": "imgs/file_icon/docx.png","expAction": "new","name": "DOCX 文档"},
+    {"ext": "xls","icon": "imgs/file_icon/xls.png","expAction": "new","name": "XLS 工作表"},
+    {"ext": "xlsx","icon": "imgs/file_icon/xlsx.png","expAction": "new","name": "XLSX 工作表"},
+    {"ext": "ppt","icon": "imgs/file_icon/ppt.png","expAction": "new","name": "PPT 演示文稿"},
+    {"ext": "pptx","icon": "imgs/file_icon/pptx.png","expAction": "new","name": "PPTX 演示文稿"}
+  ]
+}

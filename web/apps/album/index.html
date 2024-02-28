@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>相册系统</title>
+    <script src="js/init.js?from=element&plugins=album"></script>
+    <script>(function (){
+        if(!parent.webos){
+            document.write("<script src=\"../../../common/sdk/sdk.js\"></"+"script>");
+        }
+    })()
+    </script>
+    <meta name="referrer" content="never">
+    <style>
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-row class="arrow" v-if="firstPath != parentPath">
+        <el-col :span="1">
+            <el-icon @click="toShowLastPath()"><d-arrow-left></d-arrow-left></el-icon>
+        </el-col>
+    </el-row>
+    <el-row>
+        <el-col :xs="6" :sm="4" :md="3" :lg="2" :xl="1" v-for="(item,index) in photos" class="item">
+            <div class="item-com" @click="toShowPhoto(index)">
+                <div class="image">
+                    <img :src="item.thumbnail">
+                </div>
+                <div class="item-title"><div class="item-remove-icon" v-if="openType == 1"><el-icon @click.stop="removeData(index)"><delete></delete></el-icon></div>{{item.mainName}}</div>
+                <div class="item-files-icon" v-if="item.type == 2"><el-icon><files></files></el-icon></div>
+
+            </div>
+        </el-col>
+    </el-row>
+    <el-image-viewer :initial-index="view.current" @close="view.show = false" :url-list="view.list" v-if="view.show"></el-image-viewer>
+</div>
+</body>
+<script src="js/index-init.js"></script>
+</html>

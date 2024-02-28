@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可道云登录</title>
+    <script src="../smart-ui/boot/utils.js?from=element"></script>
+    <script src="md5.min.js"></script>
+    <script src="kodbox.js"></script>
+</head>
+<body>
+<div id="app">
+    <el-form :model="editData" label-width="120px" style="margin-top:20px;">
+        <el-form-item label="内网地址">
+            <el-input v-model="editData.localHost" style="width:200px;"></el-input>
+        </el-form-item>
+        <el-form-item label="外网地址">
+            <el-input v-model="editData.host" style="width:200px;"></el-input>
+        </el-form-item>
+        <el-form-item label="用户名">
+            <el-input v-model="editData.username" style="width:200px;"></el-input>
+        </el-form-item>
+        <el-form-item label="密码">
+            <el-input v-model="editData.password" style="width:200px;"></el-input>
+        </el-form-item>
+        <el-form-item>
+            <el-button type="primary" @click="kodLogin()">登录</el-button>
+        </el-form-item>
+    </el-form>
+</div>
+</body>
+<script>
+    Vue.app({
+        data(){
+            return {
+                editData:{
+                    localHost:"",
+                    host:"",
+                    username:"",
+                    password:""
+                }
+            }
+        },
+        methods:{
+            getAbsoluteUrl:function(module, action){
+                const that = this;
+                if(!that.ajaxHostUrl){
+                    const path = location.origin+location.pathname;
+                    const sz = path.split("/");
+                    sz.length -= 3;
+                    const host = sz.join("/");
+                    that.ajaxHostUrl = host+"/api";
+                }
+                return that.ajaxHostUrl+"?module=" + module + "&action=" + action;
+            },
+            splits:function (str,...args){
+                var sz = [str.trim()];
+                for (let i = 0; i < args.length; i++) {
+                    var tmp = args[i];
+                    var tmpsz = [];
+                    for (let j = 0; j < sz.length; j++) {
+                        tmpsz = tmpsz.concat(sz[j].trim().split(tmp));
+                    }
+                    sz = tmpsz;
+                }
+                for (let i = 0; i < sz.length; i++) {
+                    sz[i] = sz[i].trim();
+                }
+                return sz;
+            },
+            checkUrl:function (url,name){
+                let urlFlag = false;
+                if(url.toLowerCase().startsWith("http:") || url.toLowerCase().startsWith("https:")){
+                    urlFlag = true;
+                }
+                if(!urlFlag){
+                    parent.webos.message.error(name+"请使用http:或者https:开头");
+                    return false;
+                }
+                return true;
+            },
+            kodLogin:function (){
+                const that = this;
+                if(!that.editData.host){
+                    parent.webos.message.error("外网地址不可为空");
+                    return;
+                }
+                if(!that.checkUrl(that.editData.host,"外网地址")){
+                    return;
+                }
+                if(that.editData.localHost){
+                    if(!that.checkUrl(that.editData.localHost,"内网地址")){
+                        return;
+                    }
+                }
+                const toLogin = function (){
+                    var password = kodbox.encryPassword(that.editData.password);
+                    var csrf = kodbox.createCsrf();
+                    var formData = new FormData();
+                    var data = {
+                        "name":that.editData.username,
+                        "password":password,
+                        "rememberPassword":"0",
+                        "salt":1,
+                        "CSRF_TOKEN":csrf,
+                        "API_ROUTE":"user/index/loginSubmit"
+                    }
+                    for(var key in data){
+                        formData.append(key,data[key]);
+                    }
+                    if(that.editData.host.endsWith("/")){
+                        that.editData.host = that.editData.host.substring(0,that.editData.host.length-1);
+                    }
+                    if(that.editData.localHost && that.editData.localHost.endsWith("/")){
+                        that.editData.localHost = that.editData.localHost.substring(0,that.editData.localHost.length-1);
+                    }
+                    var url = that.getAbsoluteUrl("proxy","http")+"&url="+encodeURIComponent(btoa(that.editData.host+"?user/index/loginSubmit"))+"&resHeader="+encodeURIComponent(btoa("set-cookie:my-set-cookie"));
+                    fetch(url,{
+                        method:"POST",
+                        body:formData
+                    }).then(function (resp){
+                        var str = resp.headers.get("my-set-cookie");
+                        var sz = that.splits(str,";",",");
+                        var cookie = "";
+                        for (let i = 0; i < sz.length; i++) {
+                            var one = sz[i];
+                            if(one.startsWith("kodTokenUpdate=")){
+                                cookie += one+";";
+                            }else if(one.startsWith("kodUserID=")){
+                                cookie += one+";";
+                            }else if(one.startsWith("CSRF_TOKEN=")){
+                                cookie += one+";";
+                            }else if(one.startsWith("KOD_SESSION_ID=")){
+                                cookie += one+";";
+                            }
+                        }
+                        resp.json().then(function (res){
+                            if(!res.code){
+                                parent.webos.message.error(res.data);
+                                return;
+                            }
+                            parent.postMessage({type:"cookie",data:JSON.stringify({username:that.editData.username,password,host:that.editData.host,localHost:that.editData.localHost})},"*");
+                        });
+                    });
+                }
+                if(location.protocol == "https:" && that.editData.host.toLowerCase().startsWith("http:")){
+                    utils.$.confirm("检测到当前协议是https,填写的地址是http,将会导致很多功能不可用,确认继续?",function (flag){
+                        if(!flag){
+                            return;
+                        }
+                        toLogin();
+                    })
+                }else{
+                    toLogin();
+                }
+            }
+        },
+        mounted:function(){
+        }
+    });
+</script>
+</html>

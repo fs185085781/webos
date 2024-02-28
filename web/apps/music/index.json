@@ -1,0 +1,19 @@
+{
+  "code": "music",
+  "name": "音乐播放器",
+  "version": "1.0.0",
+  "author": "阿范",
+  "firstCat": "app",
+  "secondCat": "文件增强",
+  "imgPath": "apps/music/icon.png",
+  "descr": "系统内置支持歌词的音乐播放器",
+  "screenShots": "[]",
+  "effect": "系统内置的音乐播放器,支持如下功能<br>1.批量添加到列表<br>2.列表功能,列表数据漫游<br>4.歌词展示<br>5.更换皮肤,皮肤数据漫游<br>6.支持mp3,flac,aac,ogg,wav等格式",
+  "rightMenuAddAll": [
+    {"ext": "mp3,flac,aac,ogg,wav,m4a","icon": "apps/music/icon.png", "expAction": "playlist","name": "音乐播放器列表"}
+  ],
+  "rightMenuOpenWith": [
+    {"ext": "mp3,flac,aac,ogg,wav,m4a","icon": "apps/music/icon.png", "expAction": "open","name": "使用音乐播放器打开"}
+  ],
+  "rightMenuNew": []
+}

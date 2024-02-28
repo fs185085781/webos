@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天翼云盘</title>
+    <script src="../smart-ui/boot/utils.js?from=element"></script>
+    <style>
+        #j_loginType{
+            display:none;
+        }
+    </style>
+</head>
+<script>
+    (function (){
+        const path = location.origin+location.pathname;
+        const sz = path.split("/");
+        sz.length -= 3;
+        const host = sz.join("/");
+        let ajaxHostUrl = host+"/api";
+        utils.getAbsoluteUrl = function(module, action){
+            return ajaxHostUrl+"?module=" + module + "&action=" + action;
+        };
+        (function(){
+            var accessor = Object.getOwnPropertyDescriptor(
+                XMLHttpRequest.prototype,
+                "response"
+            );
+            Object.defineProperty(XMLHttpRequest.prototype, "response", {
+                get: function () {
+                    let response = accessor.get.call(this);
+                    response= this.__on_response(response)
+                    return response;
+                },
+                set: function (str) {
+                    return accessor.set.call(this, str);
+                },
+                configurable: true,
+            });
+
+            var host = window.location.hostname;
+            let data = null;
+            const reqHeaderMap = {};
+            const checkCookieData = async function (url){
+                url = utils.getAbsoluteUrl("proxy","http")+"&url="+encodeURIComponent(btoa(url))+"&header="+encodeURIComponent(btoa("content-type;reqid;cookie"))+"&expHeader="+encodeURIComponent(btoa("Referer:https://open.e.189.cn"));
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4){
+                        var resData = JSON.parse(xhr.responseText);
+                        if(resData.redirectUrl){
+                            var url2 = utils.getAbsoluteUrl("proxy","http")+"&url="+encodeURIComponent(btoa(resData.redirectUrl))+"&expHeader="+encodeURIComponent(btoa("Referer:https://open.e.189.cn"))+"&resHeader="+encodeURIComponent(btoa("set-cookie:my-set-cookie"));
+                            fetch(url2).then(function (res){
+                                var cookieStr = res.headers.get("my-set-cookie");
+                                var cookies = cookieStr.split(";");
+                                for (let i = 0; i < cookies.length; i++) {
+                                    var cookie = cookies[i];
+                                    if(cookie.indexOf("COOKIE_LOGIN_USER")!=-1){
+                                        parent.postMessage({type:"cookie",data:cookie},"*");
+                                        break;
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+                var method = "POST";
+                if(!data){
+                    method = "GET";
+                }
+                xhr.open(method,url,true);
+                for(var key in reqHeaderMap){
+                    xhr.setRequestHeader(key,reqHeaderMap[key]);
+                }
+                xhr.setRequestHeader("content-type","text/html; charset=UTF-8");
+                xhr.send(data);
+            }
+            var send = XMLHttpRequest.prototype.send;
+            XMLHttpRequest.prototype.send = function (...args){
+                data = args[0];
+                return send.apply(this,args);
+            }
+            var setRequestHeader = XMLHttpRequest.prototype.setRequestHeader;
+            XMLHttpRequest.prototype.setRequestHeader = function (...args){
+                reqHeaderMap[args[0]] = args[1];
+                return setRequestHeader.apply(this,args);
+            }
+            var open = XMLHttpRequest.prototype.open;
+            XMLHttpRequest.prototype.open = function(...args){
+                var url = args[1];
+                if(url.indexOf("qrcodeLoginState.do") != -1){
+                    checkCookieData(url);
+                    args[1] = "status.json";
+                    args[0] = "GET";
+                }else{
+                    if(url.indexOf(host+"/api/")!=-1){
+                        url = url.replace(host,"open.e.189.cn");
+                        args[1] = url;
+                    }
+                    if(url.startsWith("https://open.e.189.cn/api")){
+                        args[1] = utils.getAbsoluteUrl("proxy","http")+"&url="+encodeURIComponent(btoa(url))+"&header="+encodeURIComponent(btoa("content-type;reqid;cookie"))+"&expHeader="+encodeURIComponent(btoa("Referer:https://open.e.189.cn"));
+                    }
+                }
+                console.log(args);
+                return open.apply(this,args);
+            }
+        })();
+        var url = "https://cloud.189.cn/api/portal/loginUrl.action?redirectURL=https%3A%2F%2Fcloud.189.cn%2Fweb%2Fredirect.html";
+        url = utils.getAbsoluteUrl("proxy","http")+"&url="+encodeURIComponent(btoa(url))+"&cdx=1";
+        let html = "";
+        utils.syncLoadData(url,function (text){
+            html = text;
+        });
+        html = html.replaceAll("/api/logbox/oauth2/getBroadResult.do","https://open.e.189.cn/api/logbox/oauth2/getBroadResult.do");
+        html = html.replaceAll("/api/logbox/oauth2/picCaptcha.do","http.php/https://open.e.189.cn/api/logbox/oauth2/picCaptcha.do");
+        document.write(html);
+    })();
+</script>
+</html>

@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>音乐播放器</title>
+    <script src="js/init.js?from=element&plugins=player"></script>
+    <script>(function (){
+        if(!parent.webos){
+            document.write("<script src=\"../../../common/sdk/sdk.js\"></"+"script>");
+        }
+    })()
+    </script>
+    <meta name="referrer" content="never">
+    <style>
+        .aplayer.aplayer-withlrc .aplayer-pic{
+            margin-top: 60px;
+        }
+        .aplayer.aplayer-withlrc .aplayer-info{
+            height: 150px;
+        }
+        .aplayer .aplayer-lrc{
+            height: 90px;
+        }
+        .aplayer .aplayer-lrc .aplayer-lrc-contents{
+            margin-top: 30px;
+        }
+        .aplayer .aplayer-lrc:after, .aplayer .aplayer-lrc:before{
+            background: none;
+            content:none;
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .music-tag{
+            position: fixed;
+            z-index: 9999999;
+            top: 30px;
+            left:5px;
+        }
+        .music-tag .el-tag{
+            margin-left:5px;
+            cursor: pointer;
+        }
+        .aplayer .aplayer-list ol li .aplayer-list-author{
+            float: initial;
+        }
+        .aplayer .aplayer-list ol li .aplayer-list-remove{
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="app">
+    <div class="music-tag">
+        <el-tag :style="{'background':item.color}" v-for="item in themes" @click="setTheme(item.theme)"></el-tag>
+    </div>
+    <div id="music-player"></div>
+</div>
+</body>
+<script src="js/index-init.js"></script>
+</html>

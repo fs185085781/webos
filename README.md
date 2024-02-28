@@ -81,7 +81,12 @@
 
 
 ## 安装和使用
-> 【推荐】万能自动部署一键安装
+
+源码部署[戳我](other/README.md)【功能少,不推荐】
+
+官方部署参见下面【功能全,推荐】
+
+> 万能自动部署一键安装
 
 `if [ -f /usr/bin/curl ];then curl -sSO https://support.tenfell.cn/install.sh;else wget -O install.sh https://support.tenfell.cn/install.sh;fi;bash install.sh`
 
@@ -102,22 +107,12 @@ Docker版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%
 已支持挂载的部分网盘:
 - [√] 阿里云盘
 - [√] 天翼云盘
-- [√] 百度云盘
-- [√] 夸克网盘
-- [√] 一刻相册
-- [√] 115网盘
-- [√] OneDrive
 - [√] 123云盘
-- [√] WebDav
+- [√] 可道云
 - [√] 本地磁盘
-- [x] 迅雷网盘
-- [x] 移动云盘
-- [x] 曲奇网盘
 
 ## 部分功能
 下面是一些常用功能 `~o~)/`
-- [√] 第三方登录
-- [√] 离线下载
 - [√] 网页上传/下载（删除、mkdir、重命名、移动/复制/剪切/粘贴）
 - [√] 全盘断点续传(意外断网,刷新,重新在同一个目录选同一个文件能接着传)
 - [√] 跨盘秒传(任意盘之间复制粘贴会检测是否支持,不支持采用先下载再上传)
@@ -128,7 +123,6 @@ Docker版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%
 - [√] 独立的应用商店（可下载应用插件、后期可注册开发者发布自己制作的插件）
 - [√] 文件永久链接复制和直接文件下载
 - [√] 全盘文件分享（可控制是否允许下载）
-- [√] 用户权限管控
 > 更多功能就不意义介绍了，请到官网体验
 
 ## 问答

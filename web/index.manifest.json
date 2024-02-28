@@ -1,0 +1,13 @@
+{
+  "short_name": "腾飞Webos",
+  "name": "腾飞Webos",
+  "icons": [
+    {
+      "src": "./imgs/logo.png",
+      "type": "image/png",
+      "sizes": "223x223"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone"
+}

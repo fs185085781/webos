@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>腾飞WebOS-程序安装</title>
+    <script src="./modules/win11/init.js?from=element"></script>
+    <meta name="referrer" content="never">
+</head>
+<body style="display:none;">
+    <div id="app">
+        <el-form :model="appSet" label-width="120px">
+        <div style="padding: 10px;">
+            <el-card class="box-card">
+                <template #header>
+                    <el-row>
+                        <el-col :span="12">
+                            <span>数据库配置</span>
+                        </el-col>
+                        <el-col :span="12">
+                            <el-button type="primary" @click="checkData(1)">{{checkDb?'已':''}}验证数据库</el-button>
+                        </el-col>
+                    </el-row>
+                </template>
+                <el-form-item label="数据库类型" style="width: 320px">
+                    <el-select v-model="appSet.sqlType" placeholder="推荐使用mysql" style="width:100%;">
+                        <el-option label="Mysql" value="mysql"></el-option>
+                        <el-option label="Sqlite" value="sqlite"></el-option>
+                    </el-select>
+                </el-form-item>
+                <div v-if="appSet.sqlType == 'mysql'">
+                    <el-form-item label="主机" style="width: 320px">
+                        <el-input v-model="appSet.mysql.host"></el-input>
+                    </el-form-item>
+                    <el-form-item label="端口" style="width: 320px">
+                        <el-input v-model="appSet.mysql.port"></el-input>
+                    </el-form-item>
+                    <el-form-item label="数据库" style="width: 320px">
+                        <el-input v-model="appSet.mysql.database"></el-input>
+                    </el-form-item>
+                    <el-form-item label="用户名" style="width: 320px">
+                        <el-input v-model="appSet.mysql.user"></el-input>
+                    </el-form-item>
+                    <el-form-item label="密码" style="width: 320px">
+                        <el-input v-model="appSet.mysql.password"></el-input>
+                    </el-form-item>
+                </div>
+                <div v-if="appSet.sqlType == 'sqlite'">
+                    <el-form-item label="数据库位置">
+                        {{rootPath}}<el-input v-model="appSet.sqlite.path" style="width:200px;"></el-input>
+                    </el-form-item>
+                </div>
+            </el-card>
+            <el-card class="box-card">
+                <template #header>
+                    <el-row>
+                        <el-col :span="12">
+                            <span>缓存配置</span>
+                        </el-col>
+                        <el-col :span="12">
+                            <el-button type="primary" @click="checkData(2)">{{checkCache?'已':''}}验证缓存</el-button>
+                        </el-col>
+                    </el-row>
+                </template>
+                <el-form-item label="缓存类型" style="width: 320px">
+                    <el-select v-model="appSet.cacheType" placeholder="推荐使用redis" style="width:100%;">
+                        <el-option label="Redis" value="redis"></el-option>
+                        <el-option label="内存" value="file"></el-option>
+                    </el-select>
+                </el-form-item>
+                <div v-if="appSet.cacheType == 'redis'">
+                    <el-form-item label="主机" style="width: 320px">
+                        <el-input v-model="appSet.redis.host"></el-input>
+                    </el-form-item>
+                    <el-form-item label="端口" style="width: 320px">
+                        <el-input v-model="appSet.redis.port"></el-input>
+                    </el-form-item>
+                    <el-form-item label="数据库" style="width: 320px">
+                        <el-input v-model="appSet.redis.database"></el-input>
+                    </el-form-item>
+                    <el-form-item label="密码" style="width: 320px">
+                        <el-input v-model="appSet.redis.password"></el-input>
+                    </el-form-item>
+                </div>
+                <div v-if="appSet.cacheType == 'file'">
+                    <el-form-item label="缓存位置">
+                        {{rootPath}}<el-input v-model="appSet.file.path" style="width:200px;"></el-input>
+                    </el-form-item>
+                </div>
+            </el-card>
+            <el-card class="box-card">
+                <template #header>
+                    <el-row>
+                        <el-col :span="24">
+                            <span>系统账号配置</span>
+                        </el-col>
+                    </el-row>
+                </template>
+                <el-form-item label="用户名" style="width: 320px">
+                    <el-input v-model="user.username"></el-input>
+                </el-form-item>
+                <el-form-item label="密码" style="width: 320px">
+                    <el-input v-model="user.password"></el-input>
+                </el-form-item>
+            </el-card>
+        </div>
+        </el-form>
+        <el-row>
+            <el-col :span="24" style="text-align: center;">
+                <el-button type="primary" @click="save">保存</el-button>
+            </el-col>
+        </el-row>
+    </div>
+</body>
+<script>
+    Vue.app({
+        data(){
+            return {
+                protocol:"",
+                appSet:Vue.reactive({
+                    "mysql": {
+                        "host": "127.0.0.1",
+                        "port": 3306,
+                        "database": "",
+                        "user": "",
+                        "password": ""
+                    },
+                    "sqlType": "sqlite",
+                    "sqlite": {
+                        "path":"/sqlite/"+utils.uuid()+".db"
+                    },
+                    "cacheType": "file",
+                    "redis": {
+                        "host": "127.0.0.1",
+                        "port": 6379,
+                        "database":0,
+                        "password": ""
+                    },
+                    "file": {
+                        "path":"/cache"
+                    }
+                }),
+                user:{
+                    username:"admin",
+                    password:"123456"
+                },
+                checkDb:false,
+                checkCache:false,
+                checkApi:false,
+                rootPath:""
+            }
+        },
+        methods:{
+            init:function (){
+                this.checkData(4);
+            },
+            save:function (){
+                var that = this;
+                if(!this.checkApi){
+                    utils.$.errorMsg("接口未验证");
+                    return;
+                }
+                if(!this.checkDb){
+                    utils.$.errorMsg("请先验证数据库配置后重试");
+                    return;
+                }
+                if(!this.checkCache){
+                    utils.$.errorMsg("请先验证缓存配置后重试");
+                    return;
+                }
+                if(!that.user.username || !that.user.password){
+                    utils.$.errorMsg("用户名或密码不可为空");
+                    return;
+                }
+                fetch("api?module=install&action=save", {
+                    method: 'POST',
+                    body: JSON.stringify({data:that.appSet,user:that.user}),
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                }).then(resp => resp.json()).then(res => {
+                    if(res.code == 0){
+                        utils.$.successMsg("安装成功,2秒后跳转到首页");
+                        setTimeout(function (){
+                            window.location.href = "index.html";
+                        },2000);
+                    }else{
+                        utils.$.errorMsg(res.msg);
+                    }
+                });
+
+            },
+            checkData:function (type){
+                var that = this;
+                fetch("api?module=install&action=check", {
+                    method: 'POST',
+                    body: JSON.stringify({type:type,data:that.appSet}),
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                }).then(resp => resp.json()).then(res => {
+                    if(type == 1){
+                        that.checkDb = res.code == 0;
+                        if(!that.checkDb){
+                            utils.$.errorMsg(res.msg);
+                        }
+                    }else if(type == 2){
+                        that.checkCache = res.code == 0;
+                        if(!that.checkCache){
+                            utils.$.errorMsg(res.msg);
+                        }
+                    }else if(type == 4){
+                        that.checkApi = res.code == 0;
+                        if(!that.checkApi){
+                            utils.$.errorMsg(res.msg);
+                        }else{
+                            that.rootPath = res.data.rootPath;
+                        }
+                    }
+                }).catch(function (res){
+                    if(type == 4){
+                        utils.$.errorMsg("接口地址错误");
+                    }else{
+                        utils.$.errorMsg("网络错误,请先验证接口");
+                    }
+                });
+            }
+        },
+        mounted:function(){
+            document.body.style.display = "";
+            var that = this;
+            that.init();
+        }
+    });
+</script>
+</html>

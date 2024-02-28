@@ -1,0 +1,27 @@
+body,.aplayer{
+    background: #152331;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000, #152331);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000, #152331); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:#d8d8d8;
+}
+.aplayer .aplayer-list ol li.aplayer-list-light,.aplayer .aplayer-list ol li:hover{
+    background:#282424;
+}
+.aplayer .aplayer-list ol li{
+    border-top: 1px solid #343030;
+}
+.aplayer .aplayer-list ol li .aplayer-list-author,.aplayer .aplayer-info .aplayer-music .aplayer-author{
+    color: #a7a7a7;
+}
+.aplayer .aplayer-list ol li .aplayer-list-remove,.aplayer-controller button{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+.aplayer.aplayer-withlist .aplayer-info {
+    border-bottom: 1px solid #444444;
+}
+.aplayer .aplayer-lrc p {
+    color: #fbfbfb;
+}
+
+

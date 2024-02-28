@@ -1,0 +1,20 @@
+{
+  "code": "ace",
+  "name": "ACE代码编辑器",
+  "version": "1.0.0",
+  "author": "阿范",
+  "firstCat": "app",
+  "secondCat": "文件增强",
+  "imgPath": "apps/ace/icon.png",
+  "descr": "基于ACE的代码编辑器",
+  "screenShots": "[]",
+  "effect": "支持代码编辑",
+  "rightMenuAddAll": [],
+  "rightMenuOpenWith": [
+    {"ext": "pp,css,sbt,ion,py,stylus,patch,robot,cakefile,java,nim,bat,ocamlmakefile,xml,makefile,blade.php,shtml,nix,scm,sco,ctp,bro,exs,tex,module,textile,diff,kts,pgsql,njk,mediawiki,rb,str,as,rd,groovy,aw,reds,wlk,abap,aql,phtml,rs,ru,scheme,jsm,json5,jsp,scad,lucene,jsx,latte,rst,rss,wsdl,sh,snippets,markdown,sm,typescript,tgr,cc,gemfile,a,cson,abc,c,cf,sv,curly,d,svh,e,cfg,svg,f,gitignore,h,haml,hpp,cfm,m,cr,ejs,cs,p,xaml,txt,r,tf,component,s,rdf,v,mjs,asm,asl,asp,ts,di,scss,pql,latex,vhdl,ps1,red,handlebars,mysql,adb,ada,swift,yaml,cxx,hrl,pas,elm,lisp,mli,vb,rakumod,vh,ex,swig,vm,hbs,smithy,hjson,gemspec,page,html.eex,wpy,psc,bashrc,gql,xbl,fs,mml,mustache,we,htpasswd,fsscript,sqlserver,prisma,twig,oak,json,ge,mask,asciidoc,htm,orc,dockerfile,go,cjs,prolog,xhtml,prefs,coffee,gbs,xq,bib,bash,sjs,hh,nunjucks,styl,pug,vert,slim,conf,hs,gcode,xul,apex,hx,asl.json,adoc,sass,rakefile,clj,epp,ahk,io,frt,zeek,mathml,cls,cmd,fsi,scrypt,fsl,jl,nsh,log,nsi,vbs,html.erb,jq,dot,wpgm,js,jssm_state,guardfile,skim,fsx,wtest,praat,cabal,dart,jssm,feature,erb,nunjs,rakutest,vala,rkt,fth,cljs,erl,ftl,proc,praatscript,kt,rhtml,trigger,toml,cshtml,tpl,liquid,cob,php,logic,atom,htaccess,lp,lql,vue,ls,wiki,php4,php5,space,php3,pig,gnumakefile,mc,md,html,soy,drl,ml,matlab,mm,cpp,nginx,resource,4th,cirru,edi,less,mz,mixal,proto,pl6,smarty,dsl,nj,vfp,frag,lsl,alda,scala,p6,phpt,jade,partiql,glsl,mush,phps,sql,qml,sac,mel,pm6,tsx,eex,yml,tcl,make,inc,ini,htgroups,plg,ino,cbl,raku,jack,ltx,vhd,csd,c9search_results,lua,ldr,xslt,f90,pl,rake,pm,properties,lrc,lrcx","icon": "apps/ace/icon.png", "expAction": "open","name": "ACE代码预览"},
+    {"ext": "pp,css,sbt,ion,py,stylus,patch,robot,cakefile,java,nim,bat,ocamlmakefile,xml,makefile,blade.php,shtml,nix,scm,sco,ctp,bro,exs,tex,module,textile,diff,kts,pgsql,njk,mediawiki,rb,str,as,rd,groovy,aw,reds,wlk,abap,aql,phtml,rs,ru,scheme,jsm,json5,jsp,scad,lucene,jsx,latte,rst,rss,wsdl,sh,snippets,markdown,sm,typescript,tgr,cc,gemfile,a,cson,abc,c,cf,sv,curly,d,svh,e,cfg,svg,f,gitignore,h,haml,hpp,cfm,m,cr,ejs,cs,p,xaml,txt,r,tf,component,s,rdf,v,mjs,asm,asl,asp,ts,di,scss,pql,latex,vhdl,ps1,red,handlebars,mysql,adb,ada,swift,yaml,cxx,hrl,pas,elm,lisp,mli,vb,rakumod,vh,ex,swig,vm,hbs,smithy,hjson,gemspec,page,html.eex,wpy,psc,bashrc,gql,xbl,fs,mml,mustache,we,htpasswd,fsscript,sqlserver,prisma,twig,oak,json,ge,mask,asciidoc,htm,orc,dockerfile,go,cjs,prolog,xhtml,prefs,coffee,gbs,xq,bib,bash,sjs,hh,nunjucks,styl,pug,vert,slim,conf,hs,gcode,xul,apex,hx,asl.json,adoc,sass,rakefile,clj,epp,ahk,io,frt,zeek,mathml,cls,cmd,fsi,scrypt,fsl,jl,nsh,log,nsi,vbs,html.erb,jq,dot,wpgm,js,jssm_state,guardfile,skim,fsx,wtest,praat,cabal,dart,jssm,feature,erb,nunjs,rakutest,vala,rkt,fth,cljs,erl,ftl,proc,praatscript,kt,rhtml,trigger,toml,cshtml,tpl,liquid,cob,php,logic,atom,htaccess,lp,lql,vue,ls,wiki,php4,php5,space,php3,pig,gnumakefile,mc,md,html,soy,drl,ml,matlab,mm,cpp,nginx,resource,4th,cirru,edi,less,mz,mixal,proto,pl6,smarty,dsl,nj,vfp,frag,lsl,alda,scala,p6,phpt,jade,partiql,glsl,mush,phps,sql,qml,sac,mel,pm6,tsx,eex,yml,tcl,make,inc,ini,htgroups,plg,ino,cbl,raku,jack,ltx,vhd,csd,c9search_results,lua,ldr,xslt,f90,pl,rake,pm,properties,m3u8,m3u8x,lrc,lrcx","icon": "apps/ace/icon.png","expAction": "edit","name": "ACE代码编辑"}
+  ],
+  "rightMenuNew": [
+    {"ext": "md","icon": "imgs/file_icon/md.png", "expAction": "new","name": "MD文件"}
+  ]
+}

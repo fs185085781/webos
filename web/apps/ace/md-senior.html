@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="init.js?from=element"></script>
+    <script>(function (){
+        if(!parent.webos){
+            document.write("<script src=\"../../../common/sdk/sdk.js\"></"+"script>");
+        }
+    })()
+    </script>
+    <meta name="referrer" content="never">
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        iframe{
+            width:100vw;
+            height:100vh;
+            border: 0px;
+        }
+        .theme-btn{
+            position: fixed;
+            right:10px;
+            top: 0px;
+            z-index: 1000;
+        }
+        .save-btn{
+            left: -12px;
+        }
+        .md-senior{
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <iframe ref="iframe"></iframe>
+    <el-button class="theme-btn md-senior" type="primary" icon="switch" size="small" circle @click="changeSeniorMd()"></el-button>
+    <el-button v-if="fileData.expAction == 'edit'" class="theme-btn save-btn" type="primary" icon="check" size="small" circle @click="toSaveData()"></el-button>
+</div>
+</body>
+<script src="js/md-init.js"></script>
+</html>

@@ -1,0 +1,20 @@
+{
+  "code": "album",
+  "name": "相册",
+  "version": "1.0.0",
+  "author": "阿范",
+  "firstCat": "app",
+  "secondCat": "文件增强",
+  "imgPath": "apps/album/icon.png",
+  "descr": "系统内置的相册管理系统",
+  "screenShots": "[]",
+  "effect": "系统内置的相册管理系统",
+  "rightMenuAddAll": [
+    {"ext": "jpeg,png,gif,bmp,jpg,tiff,svg,ico","icon": "apps/album/icon.png", "expAction": "playlist","name": "默认相册"}
+  ],
+  "rightMenuOpenWith": [
+    {"ext": "jpeg,png,gif,bmp,jpg,tiff,svg,ico","icon": "apps/album/icon.png", "expAction": "open","name": "使用相册打开"},
+    {"ext": "folder","icon": "apps/album/icon.png", "expAction": "openfolder","name": "使用相册打开"}
+  ],
+  "rightMenuNew": []
+}

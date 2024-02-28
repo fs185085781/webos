@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>金山文档登录</title>
+    <script src="init.js?from=element"></script>
+</head>
+<body>
+<img id="wximg" src="" style="width: 100%;"/>
+</body>
+<script>
+    (function (){
+        var createCsrftoken = function() {
+            var b = ""
+                , c = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678"
+                , d = c.length;
+            for (var i = 0; i < 32; i++){
+                b += c.charAt(Math.floor(Math.random() * d));
+            }
+            return b;
+        }
+        const csrf = createCsrftoken();
+        let loginCookie = "csrf="+csrf+";";
+        let channel_id = "";
+        const path = location.origin+location.pathname;
+        const sz = path.split("/");
+        sz.length -= 3;
+        const host = sz.join("/");
+        let ajaxHostUrl = host+"/api";
+        utils.getAbsoluteUrl = function(module, action){
+            return ajaxHostUrl+"?module=" + module + "&action=" + action;
+        };
+        var userLoginBySsid = function (ssid){
+            var usersUrl = utils.getAbsoluteUrl("proxy","http")+"&url="+encodeURIComponent(btoa("https://account.wps.cn/api/v3/login/users?ssid="+ssid+"&filter_rule=normal&_="+Date.now()))+"&expHeader="+encodeURIComponent(btoa("Referer:https://account.wps.cn/"));
+            let usersData;
+            utils.syncLoadData(usersUrl,function (text){
+                usersData = JSON.parse(text);
+            });
+            var userId = usersData.users[0].userid;
+            var formData = new FormData();
+            formData.append("cb","https://account.wps.cn/usercenter/apps");
+            formData.append("verifyresult","ok");
+            formData.append("ssid",ssid);
+            formData.append("page","applogin");
+            formData.append("userids",userId);
+            var loginUrl = "https://account.wps.cn/api/v3/login/web_login";
+            loginUrl = utils.getAbsoluteUrl("proxy","http")+"&url="+encodeURIComponent(btoa(loginUrl))+"&header="+encodeURIComponent(btoa("my-cookie:cookie;my-referer:referer;x-csrftoken"))+"&resHeader="+encodeURIComponent(btoa("set-cookie:my-set-cookie"));
+            fetch(loginUrl,{
+                headers: {
+                    'my-cookie':loginCookie,
+                    'my-referer': 'https://account.wps.cn/',
+                    'x-csrftoken':csrf
+                },
+                method:"POST",
+                body:formData
+            }).then(function (res){
+                var str = res.headers.get("my-set-cookie");
+                var sz1 = str.split(";");
+                for (let i = 0; i < sz1.length; i++) {
+                    var str1 = sz1[i].trim();
+                    var sz2 = str1.split(",");
+                    for (let n = 0; n < sz2.length; n++) {
+                        var str2 = sz2[n].trim();
+                        if(str2.indexOf("wps_sid")!=-1){
+                            loginCookie +=str2;
+                        }
+                    }
+                }
+                return res.json();
+            }).then(function (res){
+                if(res && res.result == "ok"){
+                    parent.postMessage({"type":"cookie","cookie":loginCookie},"*");
+                }
+            });
+        }
+        window.miniprogramcodeJsonpCallback = function (res){
+            var finish = false;
+            if(res.data){
+                var data = JSON.parse(res.data);
+                if(data.data && data.data.status == "finish"){
+                    finish = true;
+                    userLoginBySsid(data.data.ssid);
+                }else if(data.data && data.data.status == "scan"){
+                    wximg.src = "scan.png";
+                }
+            }
+            if(!finish){
+                var script = document.createElement("script");
+                script.src = "https://qr.wps.cn/api/v3/channel/wait?_jsonp=miniprogramcodeJsonpCallback&channel_id="+channel_id+"&_="+Date.now()+"&callback=miniprogramcodeJsonpCallback";
+                document.head.appendChild(script);
+                setTimeout(function (){
+                    document.head.removeChild(script);
+                },1000);
+            }
+        }
+        var url = "https://account.wps.cn/api/v3/miniprogram/code/img?action=verify&mpappid=wx5b97b0686831c076&data=%7B%22showAgreement%22%3A%22true%22%2C%22from%22%3A%22%22%2C%22hideAgreement%22%3A%22false%22%7D";
+        url = utils.getAbsoluteUrl("proxy","http")+"&url="+encodeURIComponent(btoa(url))+"&header="+encodeURIComponent(btoa("my-cookie:cookie;content-type;my-referer:referer"));
+        fetch(url,{
+            headers: {
+                'content-type': 'application/json',
+                'my-referer': 'https://account.wps.cn/',
+                'my-cookie':loginCookie
+            }
+        }).then(function (res){
+            return res.json();
+        }).then(function (res){
+            channel_id = res.channel_id;
+            wximg.src = res.url;
+            window.miniprogramcodeJsonpCallback({result: "ok", state: "pending"});
+        });
+    })()
+</script>
+</html>

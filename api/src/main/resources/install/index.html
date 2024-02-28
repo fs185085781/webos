@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置前端路径</title>
+</head>
+<body>
+请输入前端路径
+<input id="path" type="text" value="{{path}}"/>
+<button type="button" onclick="setPath()">确定</button>
+</body>
+<script>
+    function setPath(flag) {
+        fetch("?path=" + encodeURIComponent(path.value)).then(function (res) {
+            return res.json();
+        }).then(function (res) {
+            if (res.code == 0) {
+                window.location.href = "index.html";
+            } else {
+                if(!flag){
+                    alert(res.msg);
+                }
+            }
+        });
+    }
+    document.onreadystatechange = function () {
+        if(document.readyState === 'complete'){
+            setPath(true);
+        }
+    }
+</script>
+</html>

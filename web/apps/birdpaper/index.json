@@ -1,0 +1,15 @@
+{
+  "code": "birdpaper",
+  "name": "小鸟壁纸",
+  "version": "1.0.0",
+  "author": "阿范",
+  "firstCat": "app",
+  "secondCat": "实用工具",
+  "imgPath": "apps/birdpaper/icon.png",
+  "descr": "小鸟壁纸",
+  "screenShots": "[]",
+  "effect": "小鸟壁纸",
+  "rightMenuAddAll": [],
+  "rightMenuOpenWith": [],
+  "rightMenuNew": []
+}

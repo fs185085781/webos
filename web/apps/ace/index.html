@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>代码编辑器</title>
+    <script src="init.js?from=element&plugins=ace"></script>
+    <script>(function (){
+        if(!parent.webos){
+            document.write("<script src=\"../../../common/sdk/sdk.js\"></"+"script>");
+        }
+    })()
+    </script>
+    <meta name="referrer" content="never">
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        #editor{
+            height: 100vh;
+            position: absolute;
+        }
+        .theme-btn{
+            position: fixed;
+            right:10px;
+            top: 5px;
+            z-index: 1000;
+        }
+        .save-btn{
+            left: -8px;
+        }
+        .markdown-view{
+            position: absolute;
+            height: 100vh;
+            overflow:auto;
+        }
+        .md-senior{
+            right: 42px;
+        }
+    </style>
+</head>
+<body>
+<div id="app" style="overflow:hidden;">
+    <el-button class="theme-btn" type="primary" :icon="config.theme" size="small" circle @click="changeTheme()"></el-button>
+    <el-button v-if="isMarkdown" class="theme-btn md-senior" type="primary" icon="switch" size="small" circle @click="changeSeniorMd()"></el-button>
+    <el-button v-if="fileData.expAction == 'edit'" class="theme-btn save-btn" type="primary" icon="check" size="small" circle @click="saveData()"></el-button>
+    <div id="editor" :style="{'width':(isMarkdown&&fileData.expAction!='edit'?0:isMarkdown?50:100)+'vw'}"></div>
+    <div id="markdown-view" class="markdown-view" :style="{
+    'width':(isMarkdown&&fileData.expAction!='edit'?100:isMarkdown?50:0)+'vw',
+    'margin-left':(isMarkdown&&fileData.expAction!='edit'?0:isMarkdown?50:0)+'vw'
+    }"></div>
+</div>
+<script src="js/index-init.js"></script>
+</body>
+</html>

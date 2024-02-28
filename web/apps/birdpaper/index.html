@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小鸟壁纸</title>
+    <script src="init.js?from=element"></script>
+    <script>(function (){
+        if(!parent.webos){
+            document.write("<script src=\"../../../common/sdk/sdk.js\"></"+"script>");
+        }
+    })()
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style></style>
+</head>
+<body>
+<div id="app">
+    <div v-if="type == 0">
+        <el-row style="padding:10px;">
+            <el-col :span="8"><el-button v-if="pageType != 0" @click="pageType = 0">首页</el-button></el-col>
+            <el-col :span="5">电脑壁纸专区</el-col>
+            <el-col :span="5"><el-input v-model="dataParam.keyword" placeholder="搜索关键词"></el-input></el-col>
+            <el-col :span="3" style="padding:0px 10px;">
+                <el-select v-model="dataParam.type">
+                    <el-option label="动态壁纸" value="1"></el-option>
+                    <el-option label="静态壁纸" value="2"></el-option>
+                </el-select>
+            </el-col>
+            <el-col :span="3"><el-button @click="searchData()">搜索</el-button></el-col>
+        </el-row>
+        <div v-if="pageType == 0">
+            <el-row style="padding:10px;">
+                <el-col :span="24">动态壁纸</el-col>
+            </el-row>
+            <el-row class="">
+                <el-col :xs="12" :sm="8" :md="6" :lg="6" :xl="4" v-for="item in catData.pcCat" class="item">
+                    <div class="item-com" @click="selectCat('1',item)">
+                        <div class="image">
+                            <img :src="item.icon">
+                        </div>
+                        <div class="item-title">{{item.category}}</div>
+                    </div>
+                </el-col>
+            </el-row>
+            <el-row style="padding:10px;">
+                <el-col :span="24">静态壁纸</el-col>
+            </el-row>
+            <el-row class="">
+                <el-col :xs="12" :sm="8" :md="6" :lg="6" :xl="4" v-for="item in catData.pcCat" class="item">
+                    <div class="item-com" @click="selectCat('2',item)">
+                        <div class="image">
+                            <img :src="item.icon">
+                        </div>
+                        <div class="item-title">{{item.category}}</div>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+    </div>
+    <div v-if="type == 1">
+        <el-row style="padding:10px;">
+            <el-col :span="8"><el-button v-if="pageType != 0" @click="pageType = 0">首页</el-button></el-col>
+            <el-col :span="16">手机壁纸专区</el-col>
+        </el-row>
+        <div v-if="pageType == 0">
+            <el-row style="padding:10px;">
+                <el-col :span="24">动态壁纸</el-col>
+            </el-row>
+            <el-row class="">
+                <el-col :xs="12" :sm="8" :md="6" :lg="6" :xl="4" v-for="item in catData.mDong" class="item">
+                    <div class="item-com" @click="selectCat('1',item)">
+                        <div class="image">
+                            <img :src="item.icon">
+                        </div>
+                        <div class="item-title">{{item.category}}</div>
+                    </div>
+                </el-col>
+            </el-row>
+            <el-row style="padding:10px;">
+                <el-col :span="24">静态壁纸</el-col>
+            </el-row>
+            <el-row class="">
+                <el-col :xs="12" :sm="8" :md="6" :lg="6" :xl="4" v-for="item in catData.mJin" class="item">
+                    <div class="item-com" @click="selectCat('2',item)">
+                        <div class="image">
+                            <img :src="item.icon">
+                        </div>
+                        <div class="item-title">{{item.category}}</div>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+    </div>
+    <div v-if="pageType == 1" v-loading="loading">
+        <el-row class="pc-img">
+            <el-col :xs="12" :sm="8" :md="6" :lg="6" :xl="4" v-for="item in dataList" class="item">
+                <div class="item-com" @click="showBgAction(item)">
+                    <div class="image">
+                        <img :src="item.img">
+                    </div>
+                    <div class="item-title">{{item.name}}</div>
+                </div>
+            </el-col>
+        </el-row>
+        <el-row style="padding:10px;">
+            <el-col :span="24">
+                <el-pagination background layout="prev, pager, next"
+                               :total="dataParam.total"
+                               :page-size="dataParam.count"
+                               v-model:current-page="dataParam.page"
+                               @current-change="catPageList"
+                               @prev-click="catPageList"
+                               @next-click="catPageList"
+                ></el-pagination>
+            </el-col>
+        </el-row>
+    </div>
+    <el-dialog
+            v-model="showItem.show"
+            :title="showItem.item.name"
+            width="90%"
+            draggable
+    >
+        <el-row class="show-item" :class="{'only-m-img':type==1&&!showItem.item.mp4}">
+            <el-col :span="showItem.item.mp4?12:24">
+                <img :src="showItem.item.img" alt="">
+            </el-col>
+            <el-col v-if="showItem.item.mp4" :span="12">
+                <video autoplay muted loop :src="showItem.item.mp4"></video>
+            </el-col>
+            <el-col :span="showItem.item.mp4?12:24">
+                静态壁纸
+            </el-col>
+            <el-col v-if="showItem.item.mp4" :span="12">
+                动态壁纸
+            </el-col>
+            <el-col :span="showItem.item.mp4?12:24" style="margin-top:10px;">
+                <el-button v-if="type==0" @click="applyData('win11','2')">应用到win11</el-button>
+                <el-button v-if="type==0" @click="applyData('macos','2')">应用到macos</el-button>
+                <el-button v-if="type==1" @click="applyData('mobile','2')">应用到手机</el-button>
+            </el-col>
+            <el-col v-if="showItem.item.mp4" :span="12" style="margin-top:10px;">
+                <el-button v-if="type==0" @click="applyData('win11','1')">应用到win11</el-button>
+                <el-button v-if="type==0" @click="applyData('macos','1')">应用到macos</el-button>
+                <el-button v-if="type==1" @click="applyData('mobile','1')">应用到手机</el-button>
+            </el-col>
+        </el-row>
+    </el-dialog>
+</div>
+</body>
+<script src="index-init.js"></script>
+</html>

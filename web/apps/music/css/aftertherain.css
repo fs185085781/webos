@@ -1,0 +1,5 @@
+body,.aplayer{
+    background: #9fff5b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom right, #cd93ff, #70e2ff, #9fff5b, #ffe83f, #ffa647, #ff75c3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom right, #cd93ff, #70e2ff, #9fff5b, #ffe83f, #ffa647, #ff75c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
