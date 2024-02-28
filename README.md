@@ -90,7 +90,7 @@
 
 `if [ -f /usr/bin/curl ];then curl -sSO https://support.tenfell.cn/install.sh;else wget -O install.sh https://support.tenfell.cn/install.sh;fi;bash install.sh`
 
- win版安装教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Fwin" target="_blank">点击查看</a>  
+win版安装教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Fwin" target="_blank">点击查看</a>  
 
 linux版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Flinux" target="_blank">点击查看</a>  
 
