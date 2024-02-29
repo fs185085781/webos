@@ -27,6 +27,9 @@ import java.util.Map;
 
 public class FrameStartUtil {
     public static byte[] logo;
+    private static String contact = "暂无联系方式";
+    private static String softName = "开源软件";
+    private static String systemName = "腾飞Webos社区版";//
 
     public static void pringInfo() {
         try {
@@ -52,7 +55,7 @@ public class FrameStartUtil {
             img = data.get("i32");
         }
         convertPngToIco(img, iconPath);
-        createShortcut(ProjectUtil.rootPath + "/auto-restart.bat", iconPath, "腾飞Webos服务端");
+        createShortcut(ProjectUtil.rootPath + "/auto-restart.bat", iconPath, "腾飞Webos社区版服务端");
     }
 
     public static void convertPngToIco(Image img, String icoPath) {
@@ -168,9 +171,6 @@ public class FrameStartUtil {
         win.setVisible(true);
         win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         win.setResizable(false);
-        String contact = "QQ185085781";
-        String softName = "腾飞软件";
-        String systemName = "腾飞Webos";
         win.setTitle(systemName);
         win.setLayout(new GridLayout(3, 1));
         JLabel hy = new JLabel("欢迎使用" + softName + ",客户服务联系" + contact, JLabel.CENTER);
@@ -257,8 +257,6 @@ public class FrameStartUtil {
     }
 
     private static void certificatePringInfo() {
-        String contact = "QQ185085781";
-        String softName = "腾飞软件";
         String sysName = System.getProperty("os.name");
         if (sysName.contains("Windows")) {
             System.out.println();

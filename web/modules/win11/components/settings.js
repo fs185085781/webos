@@ -8,7 +8,7 @@ export default {
                     <div class="account">
                       <img :src="user.imgPath?user.imgPath:'imgs/logo.png'" alt="" class="user-avatar s60">
                       <div>
-                        <p>{{user.nickName?user.nickName:'腾飞WebOS'}}</p>
+                        <p>{{user.nickName?user.nickName:'腾飞Webos社区版'}}</p>
                         <p>{{user.username}}</p>
                       </div>
                     </div>

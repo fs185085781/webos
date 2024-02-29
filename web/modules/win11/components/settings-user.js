@@ -5,7 +5,7 @@ export default {
           <template v-if="componentData.selectedSecond == ''">
               <div class="accountsTop ">
                 <img :src="user.imgPath?user.imgPath:'imgs/logo.png'" alt="" class="user-avatar">
-                <div><p>{{user.nickName?user.nickName:'腾飞WebOS'}}</p><p>{{user.username}}</p></div>
+                <div><p>{{user.nickName?user.nickName:'腾飞Webos社区版'}}</p><p>{{user.username}}</p></div>
               </div>
               <div class="tile" @click="changeSecondView('info','帐户信息')">
                 <span class="settingsIcon"><i class="fa fa-user"></i></span>

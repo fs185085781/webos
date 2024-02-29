@@ -12,7 +12,7 @@ export default {
             <div class="fadeinScreen login-form" :data-faded="loginDiv.loginFaded" data-unlock="false">
                 <div class="imageCont prtclk rounded-full overflow-hidden" data-back="false">
                     <img :src="user.imgPath?user.imgPath:'imgs/logo.png'" alt="" class="user-avatar s200"></div>
-                <div class="mt-2 text-2xl font-medium text-gray-200">{{user.nickName?user.nickName:'腾飞WebOS'}}</div>
+                <div class="mt-2 text-2xl font-medium text-gray-200">{{user.nickName?user.nickName:'腾飞Webos社区版'}}</div>
                 <div class="text-xs text-gray-400 mt-4" v-if="loginType == 0 && lockType == 0">
                     <el-input name="no" clearable v-model="loginData.parentUserNo" class="login-input" placeholder="主用户编码,为空则主用户登录"></el-input>
                 </div>

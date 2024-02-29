@@ -6,11 +6,9 @@ export default {
             <div :data-hide="!about.show" class="aboutApp floatTab dpShad" :style="{'top':about.top+'px','left':about.left+'px'}">
               <div class="content p-6">
                 <div class="text-xl font-semibold">关于</div>
-                <p>腾飞webos是一个商业化项目，希望在网络上复制Windows 11的桌面体验。</p>
+                <p>腾飞webos社区版是一个开源项目，希望在网络上复制Windows 11的桌面体验。</p>
                 <p>此项目仅采用开源项目<a target="_blank" href="https://github.com/blueedgetechno/win11React" rel="noreferrer">win11React</a>的样式</p>
                 <p>前后端逻辑和动画由阿范🎈完全从0写的,由前端Vue+后端Java共同实现</p>
-                <p class="pl-4">联系QQ :&nbsp;185085781</p>
-                <p class="pl-4">联系微信 :&nbsp;O_o-T_T_o_O</p>
                 <p>此项目绝不附属于微软，且不应与微软操作系统或产品混淆。</p>
                 <p>这也不是&nbsp;<a target="_blank" href="https://www.microsoft.com/en-in/windows-365" rel="noreferrer">Windows 365 cloud PC</a>.</p>
                 <p>本项目中微软、Windows和其他示范产品是微软公司组的商标。.</p>
@@ -128,7 +126,7 @@ export default {
                  <div class="uicon">
                    <img :src="user.imgPath?user.imgPath:'imgs/logo.png'" alt="" class="user-avatar s26">
                  </div>
-                 <div class="usName">{{user.nickName?user.nickName:'腾飞WebOS'}}</div>
+                 <div class="usName">{{user.nickName?user.nickName:'腾飞Webos社区版'}}</div>
                </div>
                <div class="relative powerMenu" @click="startMenu.shutDownShow = !startMenu.shutDownShow">
                  <div class="powerCont" :data-vis="startMenu.shutDownShow">
