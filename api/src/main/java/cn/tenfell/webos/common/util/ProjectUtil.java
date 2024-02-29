@@ -2,7 +2,6 @@ package cn.tenfell.webos.common.util;
 
 import java.io.File;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
@@ -47,7 +46,6 @@ import cn.tenfell.webos.common.webdav.WebdavUtil;
 
 public class ProjectUtil {
     private static Log log = LogFactory.get();
-    public static String jmPublicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCyCKDubntmD36NAS0EqUY6re+GVCVZr2y/poNdC0AG9sTYURtt6qmfF2SBgJydceyYKV8AZ7zV3QKpa2ieqmTBLRsB4JIEQovzcQyNVWY90XPd10LG6f9WshWdCArwBp2VchKhL86fm5pypvqtIih+kFGfOoocQ+NAafOwVrD3JwIDAQAB";
     public static JSONObject softVersion;
     private static final ThreadLocal<ProjectContext> currentContext = new ThreadLocal<>();
     // 配置文件路径
@@ -96,7 +94,7 @@ public class ProjectUtil {
     }
 
     public static void authRestart(Throwable e) {
-        if(e != null){
+        if (e != null) {
             e = ExceptionUtil.getRootCause(e);
             if (!"InaccessibleObjectException".equals(e.getClass().getSimpleName())) {
                 return;
@@ -195,9 +193,6 @@ public class ProjectUtil {
             startConfig.set("projectName", "webos" + IdUtil.getSnowflakeNextId());
             needSave = true;
         }
-        if (needSave) {
-            FileUtil.writeUtf8String(startConfig.toString(), startConfigPath);
-        }
         noErrorMethod(ProjectUtil::settingKaijiAction);
         noErrorMethod(FrameStartUtil::pringInfo);
         log.info("webos started in jdk:{}", System.getProperty("java.version"));
@@ -218,9 +213,8 @@ public class ProjectUtil {
                 }
             }
         }
-        if (StrUtil.isNotBlank(webRootPath.get())) {
-            FileUtil.writeBytes(FrameStartUtil.logo, webRootPath.get() + "/imgs/logo.png");
-            FileUtil.writeBytes(FrameStartUtil.logo, webRootPath.get() + "/common/smart-ui/expand/logo_32.png");
+        if (needSave) {
+            FileUtil.writeUtf8String(startConfig.toString(), startConfigPath);
         }
         int port = startConfig.getInt("port");
         Solon.start(ProjectUtil.class, ArrayUtil.append(new String[0], "--server.port=" + port), app -> {
