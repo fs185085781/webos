@@ -19,7 +19,7 @@
   - [问答](#问答)
 
 ## 前言
-腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, <a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fbbs.tenfell.cn%2Fupdate" target="_blank">更新日志</a> ←。
+腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, <a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Fchangelog.html" target="_blank">更新日志</a> ←。
 
 参考API<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fthoughts.teambition.com%2Fshare%2F64531c70be7a0f004263891d" target="_blank">插件开发</a>  
 
