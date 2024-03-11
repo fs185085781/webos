@@ -28,7 +28,7 @@
 
 
 ## 效果展示
-> 每次更新都会对效果作出调整，达到满意为止(你点一下这里查看<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Ftfyun.gitee.io%2Findex.html%3FtoLoginNo%3D10001%26toLoginUser%3Dtest%26toLoginPassword%3D123456" target="_blank">官方演示</a> `-_-)o` )  
+> 每次更新都会对效果作出调整，达到满意为止(你点一下这里查看<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Ftfyun.gitee.io%2F%3FtoGuest%3Dtrue" target="_blank">官方演示</a> `-_-)o` )  
 
 [![](imgs/dl.png)]()
 *登录*
@@ -76,7 +76,7 @@
 *网盘模式*
 ## 在线体验
 
-<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Ftfyun.gitee.io%2Findex.html%3FtoLoginNo%3D10001%26toLoginUser%3Dtest%26toLoginPassword%3D123456" target="_blank">在线预览</a>  
+<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Ftfyun.gitee.io%2F%3FtoGuest%3Dtrue" target="_blank">在线预览</a>  
 
 
 
@@ -90,17 +90,17 @@
 
 `if [ -f /usr/bin/curl ];then curl -sSO https://support.tenfell.cn/install.sh;else wget -O install.sh https://support.tenfell.cn/install.sh;fi;bash install.sh`
 
-win版安装教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Fwin" target="_blank">点击查看</a>  
+win版安装教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fwin.html" target="_blank">点击查看</a>  
 
-linux版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Flinux" target="_blank">点击查看</a>  
+linux版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Flinux.html" target="_blank">点击查看</a>  
 
-MAC版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Fmac" target="_blank">点击查看</a>  
+MAC版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fmac.html" target="_blank">点击查看</a>  
 
-宝塔版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Fbt" target="_blank">点击查看</a>  
+宝塔版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fbt.html" target="_blank">点击查看</a>  
  
-Docker版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Fdocker" target="_blank">点击查看</a>  
+Docker版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fdocker.html" target="_blank">点击查看</a>  
  
-群辉版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2F%23%2Fdoc%2Fqunhui" target="_blank">点击查看</a>  
+群辉版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fqh.html" target="_blank">点击查看</a>  
 
 
 ## 网盘挂载
