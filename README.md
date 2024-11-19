@@ -9,7 +9,7 @@
 > 只需要一个浏览器，三端都能访问 ✨PC✨H5✨ipad🎊🎈`o(^o^)o`
 
 
-- <a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn" target="_blank">腾飞Webos</a>
+- <a href="https://os.tenfell.cn" target="_blank">腾飞Webos</a>
   - [前言](#前言)
   - [效果展示](#效果展示)
   - [在线体验](#在线体验)
@@ -19,16 +19,16 @@
   - [问答](#问答)
 
 ## 前言
-腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, <a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Fchangelog.html" target="_blank">更新日志</a> ←。
+腾飞Webos是免费的，个人随意部署，应用商店提供大量插件,且全部免费, <a href="https://os.tenfell.cn/doc/guide/changelog.html" target="_blank">更新日志</a> ←。
 
-参考API<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fthoughts.teambition.com%2Fshare%2F64531c70be7a0f004263891d" target="_blank">插件开发</a>  
+参考API<a href="https://thoughts.teambition.com/share/64531c70be7a0f004263891d" target="_blank">插件开发</a>  
 
 仿win11的操作习惯，占用内存小，各种高级的功能(支持开发者自行开发插件)
 > 安卓、IOS，桌面版火速开发中....... `>v-)o`
 
 
 ## 效果展示
-> 每次更新都会对效果作出调整，达到满意为止(你点一下这里查看<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Ftfyun.gitee.io%2F%3FtoGuest%3Dtrue" target="_blank">官方演示</a> `-_-)o` )  
+> 每次更新都会对效果作出调整，达到满意为止(你点一下这里查看<a href="https://p.tenfell.cn/?toGuest=true" target="_blank">官方演示</a> `-_-)o` )  
 
 [![](imgs/dl.png)]()
 *登录*
@@ -76,7 +76,7 @@
 *网盘模式*
 ## 在线体验
 
-<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Ftfyun.gitee.io%2F%3FtoGuest%3Dtrue" target="_blank">在线预览</a>  
+<a href="https://p.tenfell.cn/?toGuest=true" target="_blank">在线预览</a>  
 
 
 
@@ -90,17 +90,17 @@
 
 `if [ -f /usr/bin/curl ];then curl -sSO https://support.tenfell.cn/install.sh;else wget -O install.sh https://support.tenfell.cn/install.sh;fi;bash install.sh`
 
-win版安装教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fwin.html" target="_blank">点击查看</a>  
+win版安装教程<a href="https://os.tenfell.cn/doc/guide/arrange/win.html" target="_blank">点击查看</a>  
 
-linux版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Flinux.html" target="_blank">点击查看</a>  
+linux版部署教程<a href="https://os.tenfell.cn/doc/guide/arrange/linux.html" target="_blank">点击查看</a>  
 
-MAC版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fmac.html" target="_blank">点击查看</a>  
+MAC版部署教程<a href="https://os.tenfell.cn/doc/guide/arrange/mac.html" target="_blank">点击查看</a>  
 
-宝塔版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fbt.html" target="_blank">点击查看</a>  
+宝塔版部署教程<a href="https://os.tenfell.cn/doc/guide/arrange/bt.html" target="_blank">点击查看</a>  
  
-Docker版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fdocker.html" target="_blank">点击查看</a>  
+Docker版部署教程<a href="https://os.tenfell.cn/doc/guide/arrange/docker.html" target="_blank">点击查看</a>  
  
-群辉版部署教程<a href="https://tfyun.gitee.io/common/jump.html?url=https%3A%2F%2Fos.tenfell.cn%2Fdoc%2Fguide%2Farrange%2Fqh.html" target="_blank">点击查看</a>  
+群辉版部署教程<a href="https://os.tenfell.cn/doc/guide/arrange/qh.html" target="_blank">点击查看</a>  
 
 
 ## 网盘挂载
